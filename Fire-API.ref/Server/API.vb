@@ -99,10 +99,10 @@ Public Class API
                             Return response("channels")
                         Case ServerInfoType.DISCORD_ID
                             Return response("id")
-                        Case ServerInfoType.SERVER_NAME
-                            Return response("name")
                         Case ServerInfoType.MEMBERS
                             Return response("members")
+                        Case ServerInfoType.SERVER_NAME
+                            Return response("name")
                     End Select
                 Case ServerName.FRAMEWORK_STATUS, ServerName.API_STATUS
                     Select Case infotype
@@ -125,8 +125,8 @@ Public Class API
     ''' Get status URL corresponding to a server name
     ''' </summary>
     ''' <param name="name"><seealso cref="ServerName"/> to get status URL</param>
-    ''' <returns></returns>
-    Private Function GetServerStatusURL(name As ServerName)
+    ''' <returns>Status server URL</returns>
+    Private Function GetServerStatusURL(name As ServerName) As String
         Select Case name
             Case ServerName.FIRE_SOFTWARES
                 Return STATUS_0
